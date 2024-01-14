@@ -118,7 +118,7 @@ class Lookyloo(ProcessingModule):
             time.sleep(5)
             status = myinstance.get_status(uuid)["status_code"]
             tries = tries + 1
-
+        print(myinstance.get_status(uuid))
         if status != 1:
             self.log("error", "Unable to capture '{0}', probably timed out.".format(target))
             self.results["redirections"].append(target)
