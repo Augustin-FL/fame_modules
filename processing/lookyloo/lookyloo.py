@@ -130,8 +130,8 @@ class Lookyloo(ProcessingModule):
         print(redirects)
         for redirect in redirects["response"]["redirects"]:
             self.results["redirections"].append(redirect)
-
-        self.results["target"] = redirects["response"]["redirects"][-1]
+        if redirects["response"]["redirects"]:
+            self.results["target"] = redirects["response"]["redirects"][-1]
 
         screenshot = myinstance.get_screenshot(uuid)
 
